@@ -113,6 +113,7 @@ To protect a branch from failure commits by requiring status checks before mergi
   - Check on `Require status checks to pass before merging`
   - Select `Nodejs` workflow
 
-
-
-*** **_You can find more about github actions [here](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)_** ***
+### Learning Links:
+1. [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
+2. [Docker](https://docs.docker.com/)
+3. [Coursera](https://www.coursera.org/)
