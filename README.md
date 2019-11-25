@@ -112,7 +112,7 @@ jobs:
 6. Waiting for `pull_request` workflow to be triggered and run test
 7. When everything is green, you can merge this pull request to `master`
 8. `master` workflow will be triggered and deploy to Heroku following steps that you define above
-9. See your deployment result from http://<your_app_name>.herokuapp.com/
+9. See your deployment result from [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
 
 **_NOTE:_** This will be triggered when pushes codes to master branch only.
 
@@ -136,7 +136,7 @@ jobs:
 8. The previous pull request is triggered
 9. Finally, everything is green, you can merge this pull request to `master`
 10. Waiting for `master` workflow to be triggered and deployed to Heroku
-11. See your deployment result from http://<your_app_name>.herokuapp.com/
+11. See your deployment result from [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
 
 ## Setting branch protection
 To protect a branch from failure commits by requiring status checks before merging a pull request
@@ -147,10 +147,10 @@ To protect a branch from failure commits by requiring status checks before mergi
   - Select `Nodejs` workflow
 
 ### More Learning Hubs:
-1. [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
-2. [Docker](https://docs.docker.com/)
+- [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
+- [Docker](https://docs.docker.com/)
 
 ### More Agoda:
-3. [Facebook Tech@Agoda](https://www.facebook.com/techatagoda/)
-4. [Youtube Tech@Agoda](https://www.youtube.com/channel/UCu5YSzBDy5zjTrLXE6Tmwaw)
-5. [Careers@Agoda](https://careersatagoda.com/)
+- [Facebook Tech@Agoda](https://www.facebook.com/techatagoda/)
+- [Youtube Tech@Agoda](https://www.youtube.com/channel/UCu5YSzBDy5zjTrLXE6Tmwaw)
+- [Careers@Agoda](https://careersatagoda.com/)
