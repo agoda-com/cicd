@@ -61,8 +61,8 @@ For example,
 5. Go back to your github project repository
 6. Select `Settings` of your github repository
 7. Go to `Secrets` and `Add a new secret`
-  - Name: HEROKU_API_KEY
-  - Value: `<your_heroku_api_key>`
+    - Name: HEROKU_API_KEY
+    - Value: `<your_heroku_api_key>`
 8. Update a workflow file or create another file to contain last three steps
 ```
 name: Nodejs
