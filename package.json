@@ -1,0 +1,22 @@
+{
+  "name": "workflows",
+  "version": "1.0.0",
+  "description": "workflows nodejs example",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --require babel-register tests/*.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Pohfy123/workflows-nodejs-example.git"
+  },
+  "author": "Kornchanok Jiravesayakul",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1",
+    "mocha": "^6.2.2"
+  }
+}
