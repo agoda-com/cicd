@@ -11,7 +11,7 @@
 ## Creating a workflow file
 
 1. Create a folder named `.github/workflows` inside the repository to store a workflow file
-2. Add a workflow `.yml` file inside `.github/workflows`, file name can be any e.g. `.github/workflows/cicd-workflow.yml`
+2. Add a workflow `.yml` file inside `.github/workflows`, file name can be any in `yml` e.g. `.github/workflows/cicd-workflow.yml`
 
 #### Workflow file example
 >```
@@ -51,9 +51,9 @@ For example,
 2. Verify your account in registered e-mail
 3. Log in to your account
 4. Select `New` (on the right-top) and then `Create new app`
-5. Fill `App Name` e.g. `<your_name>-cicd-workshop`
+5. Fill `App Name` e.g. `<your_name>-cicd`
 
-### How to integrate to the workflow
+### How to connect GitHub and Heroku together
 1. Click on your avatar on the right-top corner
 2. Select `Account settings`
 3. Scroll down to `API Key` and `Generate API Key...`
@@ -63,7 +63,10 @@ For example,
 7. Go to `Secrets` and `Add a new secret`
     - Name: HEROKU_API_KEY
     - Value: `<your_heroku_api_key>`
-8. Update a workflow file or create another file to contain last three steps
+
+### Heroku integration
+1. Go back to `Code` tab and go inside `.github/workflows` directory
+2. Select `Create new file` and file name can be any in `yml` e.g. `.github/workflows/master-cicd.yml`
 ```
 name: Nodejs
 on: 
@@ -77,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      HEROKU_APP: <your_name>-cicd-workshop
+      HEROKU_APP: <your_name>-cicd
     steps:
       - uses: actions/checkout@v1
 
@@ -102,8 +105,33 @@ jobs:
           secrets: |
             $HEROKU_API_KEY
 ```
+2. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
+3. Namimg your branch to be understandable e.g. `master-workflow`
+4. Click `Propose new file` button
+5. You will see difference of your changes and `Create pull request`
+6. Waiting for `pull_request` workflow to be triggered and run
 
 **_NOTE:_** This will be triggered when pushes codes to master branch only.
+
+### Let's change some codes
+1. Go back to `Code` tab and select `server.js` file
+2. Edit file by clicking at pencil
+3. Update greeting text from `Hello Everyone!!` to `Hello <your_name>!!`
+4. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
+5. Namimg your branch to be understandable e.g. `update-greeting`
+6. Click `Commit changes` button and `Create pull request`
+7. Waiting for `pull_request` workflow to be triggered and run
+
+### How could we fix when test failed?
+1. Go back to `Code` tab
+2. Firstly, select `update-greeting` branch
+3. Go to `tests` directory and select `erver.test.js` file
+4. Edit file by clicking at pencil
+5. Update greeting text from `Hello Everyone` to `Hello <your_name>`
+6. `Commit changes` by selecting `Commit directly to the update-greeting branch.`
+7. Click `Commit changes` button
+8. The previous pull request is triggered
+9. Finally, everything is green, you can merge this pull request to `master`
 
 ## Setting branch protection
 To protect a branch from failure commits by requiring status checks before merging a pull request
@@ -113,7 +141,11 @@ To protect a branch from failure commits by requiring status checks before mergi
   - Check on `Require status checks to pass before merging`
   - Select `Nodejs` workflow
 
-### Learning Links:
+### Learning more:
 1. [GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
 2. [Docker](https://docs.docker.com/)
-3. [Coursera](https://www.coursera.org/)
+
+### Agoda more:
+3. [Facebook Tech@Agoda](https://www.facebook.com/techatagoda/)
+4. [Youtube Tech@Agoda](https://www.youtube.com/channel/UCu5YSzBDy5zjTrLXE6Tmwaw)
+5. [Careers@Agoda](https://careersatagoda.com/)
