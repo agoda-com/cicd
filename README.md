@@ -109,7 +109,10 @@ jobs:
 3. Namimg your branch to be understandable e.g. `master-workflow`
 4. Click `Propose new file` button
 5. You will see difference of your changes and `Create pull request`
-6. Waiting for `pull_request` workflow to be triggered and run
+6. Waiting for `pull_request` workflow to be triggered and run test
+7. When everything is green, you can merge this pull request to `master`
+8. `master` workflow will be triggered and deploy to Heroku following steps that you define above
+9. See your deployment result from http://<your_app_name>.herokuapp.com/
 
 **_NOTE:_** This will be triggered when pushes codes to master branch only.
 
@@ -120,7 +123,7 @@ jobs:
 4. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
 5. Namimg your branch to be understandable e.g. `update-greeting`
 6. Click `Commit changes` button and `Create pull request`
-7. Waiting for `pull_request` workflow to be triggered and run
+7. Waiting for `pull_request` workflow to be triggered and run test
 
 ### How could we fix when test failed?
 1. Go back to `Code` tab
@@ -132,6 +135,8 @@ jobs:
 7. Click `Commit changes` button
 8. The previous pull request is triggered
 9. Finally, everything is green, you can merge this pull request to `master`
+10. Waiting for `master` workflow to be triggered and deployed to Heroku
+11. See your deployment result from http://<your_app_name>.herokuapp.com/
 
 ## Setting branch protection
 To protect a branch from failure commits by requiring status checks before merging a pull request
