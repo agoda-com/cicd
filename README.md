@@ -51,7 +51,8 @@
 >      - name: Test
 >        run: docker run --rm -i $IMAGE_NAME:$IMAGE_TAG yarn test
 >```
-4. Click `Commit changes` button
+4. Commit new file by selecting `Commit directly to the master branch.`
+5. Click `Commit new file` button
 
 **_NOTE:_** You can create more than one workflow in the repository.
 
@@ -72,20 +73,29 @@ After pushing your changes, go to `Actions` tab in your Github repository. The c
   on: pull_request
   ```
 3. Click `Commit changes` button
-4. Go back to `Actions` and you should not see a new build running
+4. Go back to `Actions` tab and you should not see a new build running
 
 ## Creating pull request
 1. Go to `README.md` file in root path, edit the file by clicking at pencil icon
-2. Change the repository name in the first line to be ![](https://github.com/<your_github_account>/cicd/workflows/Nodejs/badge.svg)
+2. Change the repository name in the first line from
+```
+![](https://github.com/agoda-com/cicd/workflows/Nodejs/badge.svg)
+```
+to be
+```
+![](https://github.com/<your_github_account>/cicd/workflows/Nodejs/badge.svg)
+```
 3. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
-4. Go to `Actions` and wait for `pull_request` workflow to be triggered
-5. Go to `Pull requests`, you will see the check named `Nodejs (pull_request)` is running 
+4. Click `Propose file change` button
+5. You will see the difference of your changes and `Create pull request`
+6. Go to `Actions` tab and wait for `pull_request` workflow to be triggered
+7. Go to `Pull requests` tab, you will see the check named `Nodejs (pull_request)` is running 
 
 ## Setting branch protection
 Protect the master branch from having commits not tested merged by requiring status checks to pass before merging a pull request
 1. Select `Settings` of your github repository
 2. Go to `Branches` in the left menu and click on `Add rule` button
-  - Branch name pattern: master
+  - Branch name pattern: `master`
   - Check on `Require status checks to pass before merging`
   - Select `Nodejs` workflow
 3. Go back to `Pull requests`, you will see `Required` badge inside the check
@@ -107,7 +117,6 @@ In Heroku:
 4. Copy `API Key`
 
 In your github project repository:
-
 5. Select `Settings` of your github repository
 6. Go to `Secrets` and `Add a new secret`
     - Name: HEROKU_API_KEY
