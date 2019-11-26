@@ -40,21 +40,21 @@
 
 
 ## Triggering a workflow
-Workflow will start by the event defined above.  
+Workflow will be triggered by the event defined above.  
 For example,
-- `push` event, it will be triggered when someone pushes some codes into the repository
-- `pull_request` event, it will be triggered when somone open an pull request
+- `push` event will be triggered when someone push some codes into the repository
+- `pull_request` event will be triggered when someone open a pull request
 
 ## Deploying to heroku
 ### How to create app
 1. Sign up in Heroku: https://signup.heroku.com/login
 2. Verify your account in registered e-mail
 3. Log in to your account
-4. Select `New` (on the right-top) and then `Create new app`
+4. Select `New` (on the top-right) and then `Create new app`
 5. Fill `App Name` e.g. `<your_name>-cicd`
 
 ### How to connect GitHub and Heroku together
-1. Click on your avatar on the right-top corner
+1. Click on your avatar on the top-right corner
 2. Select `Account settings`
 3. Scroll down to `API Key` and `Generate API Key...`
 4. Copy `API Key`
@@ -106,37 +106,37 @@ jobs:
             $HEROKU_API_KEY
 ```
 2. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
-3. Namimg your branch to be understandable e.g. `master-workflow`
+3. Name your branch to be understandable e.g. `master-workflow`
 4. Click `Propose new file` button
-5. You will see difference of your changes and `Create pull request`
-6. Waiting for `pull_request` workflow to be triggered and run test
+5. You will see the difference of your changes and `Create pull request`
+6. Wait for `pull_request` workflow to be triggered and run test
 7. When everything is green, you can merge this pull request to `master`
-8. `master` workflow will be triggered and deploy to Heroku following steps that you define above
-9. See your deployment result from [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
+8. `master` workflow and deployment to Heroku will be triggered following steps defined above
+9. Your deployment result can be seen at [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
 
-**_NOTE:_** This will be triggered when pushes codes to master branch only.
+**_NOTE:_** This will be triggered only when code is pushed to master branch.
 
 ### Let's change some codes
 1. Go back to `Code` tab and select `server.js` file
-2. Edit file by clicking at pencil
+2. Edit the file by clicking at pencil
 3. Update greeting text from `Hello Everyone!!` to `Hello <your_name>!!`
 4. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
-5. Namimg your branch to be understandable e.g. `update-greeting`
+5. Name your branch to be understandable e.g. `update-greeting`
 6. Click `Commit changes` button and `Create pull request`
-7. Waiting for `pull_request` workflow to be triggered and run test
+7. Wait for `pull_request` workflow to be triggered and run test
 
-### How could we fix when test failed?
+### How could we fix when some test failed?
 1. Go back to `Code` tab
-2. Firstly, select `update-greeting` branch
+2. Select `update-greeting` branch
 3. Go to `tests` directory and select `erver.test.js` file
-4. Edit file by clicking at pencil
+4. Edit the file by clicking at pencil
 5. Update greeting text from `Hello Everyone` to `Hello <your_name>`
 6. `Commit changes` by selecting `Commit directly to the update-greeting branch.`
 7. Click `Commit changes` button
 8. The previous pull request is triggered
-9. Finally, everything is green, you can merge this pull request to `master`
-10. Waiting for `master` workflow to be triggered and deployed to Heroku
-11. See your deployment result from [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
+9. If everything is green, you can merge this pull request to `master`
+10. Wait for `master` workflow and deployment to Heroku to be triggered
+11. Your deployment result can be seen at [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
 
 ## Setting branch protection
 To protect a branch from failure commits by requiring status checks before merging a pull request
