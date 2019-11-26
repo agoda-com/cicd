@@ -51,8 +51,7 @@
 >      - name: Test
 >        run: docker run --rm -i $IMAGE_NAME:$IMAGE_TAG yarn test
 >```
-4. Commit new file by selecting `Commit directly to the master branch.`
-5. Click `Commit new file` button
+4. Click `Commit new file` button
 
 **_NOTE:_** You can create more than one workflow in the repository.
 
@@ -66,14 +65,15 @@ For example,
 After pushing your changes, go to `Actions` tab in your Github repository. The changes will be verified and you should see the green check in front of the workflow name when it is finished.
 
 ## Verifying changes before merging codes
-1. Go to `.github/workflows/cicd-workflow.yml`, edit the file by clicking at pencil icon
-2. Change the event of the workflow from `on: push` to be `on: pull_request`  
+1. Go back to `Code` tab
+2. Go to `.github/workflows/cicd-workflow.yml`, edit the file by clicking at pencil icon
+3. Change the event of the workflow from `on: push` to be `on: pull_request`  
   ```
   name: Nodejs
   on: pull_request
   ```
-3. Click `Commit changes` button
-4. Go back to `Actions` tab and you should not see a new build running
+4. Select `Start commit` dropdown (top-right) and click `Commit changes` button
+5. Go back to `Actions` tab and you should not see a new build running
 
 ## Creating pull request
 1. Go to `README.md` file in root path, edit the file by clicking at pencil icon
@@ -110,13 +110,13 @@ Protect the master branch from having commits not tested merged by requiring sta
 5. Fill `App Name` e.g. `<your_name>-cicd`
 
 ### How to connect GitHub and Heroku together
-In Heroku:
+#### In Heroku:
 1. Click on your avatar on the top-right corner
 2. Select `Account settings`
 3. Scroll down to `API Key` and `Generate API Key...`
 4. Copy `API Key`
 
-In your github project repository:
+#### In your github project repository:
 5. Select `Settings` of your github repository
 6. Go to `Secrets` and `Add a new secret`
     - Name: HEROKU_API_KEY
@@ -168,8 +168,8 @@ jobs:
           secrets: |
             $HEROKU_API_KEY
 ```
-3. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
-4. Name your branch to be understandable e.g. `master-workflow`
+3. Commit new file by selecting `Create a new branch for this commit and start a pull request.`
+4. Name your branch to be understandable e.g. `add-master-workflow`
 5. Click `Propose new file` button
 6. You will see the difference of your changes and `Create pull request`
 7. Wait for `pull_request` workflow to be triggered and run test
