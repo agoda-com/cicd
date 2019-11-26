@@ -14,6 +14,9 @@
 - [More Learning Hubs](#more-learning-hubs)
 - [More Agoda](#more-agoda)
 
+## How to fork the repository
+1. Click on `Fork` button (on the top-right)
+2. Select your Github account
 
 ## Creating a workflow file
 1. Go to `Code` tab in Github repository
@@ -104,8 +107,8 @@ In Heroku:
 
 In your github project repository:
 
-6. Select `Settings` of your github repository
-7. Go to `Secrets` and `Add a new secret`
+5. Select `Settings` of your github repository
+6. Go to `Secrets` and `Add a new secret`
     - Name: HEROKU_API_KEY
     - Value: `<your_heroku_api_key>`
 
@@ -155,14 +158,14 @@ jobs:
           secrets: |
             $HEROKU_API_KEY
 ```
-2. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
-3. Name your branch to be understandable e.g. `master-workflow`
-4. Click `Propose new file` button
-5. You will see the difference of your changes and `Create pull request`
-6. Wait for `pull_request` workflow to be triggered and run test
-7. When everything is green, you can merge this pull request to `master`
-8. `master` workflow and deployment to Heroku will be triggered following steps defined above
-9. Your deployment result can be seen at [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
+3. `Commit changes` by selecting `Create a new branch for this commit and start a pull request.`
+4. Name your branch to be understandable e.g. `master-workflow`
+5. Click `Propose new file` button
+6. You will see the difference of your changes and `Create pull request`
+7. Wait for `pull_request` workflow to be triggered and run test
+8. When everything is green, you can merge this pull request to `master`
+9. `master` workflow and deployment to Heroku will be triggered following steps defined above
+10. Your deployment result can be seen at [http://<your_app_name>.herokuapp.com/](http://<your_app_name>.herokuapp.com/)
 
 **_NOTE:_** This will be triggered only when code is pushed to master branch.
 
