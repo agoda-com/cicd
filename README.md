@@ -18,7 +18,7 @@
 ## Creating a workflow file
 1. Go to `Code` tab in Github repository
 2. Create a folder named `.github/workflows` inside the repository by clicking `Create new file`, paste `.github/workflows` into text box
-3. Create a workflow `.yml` file inside `.github/workflows`, file name can be any in `yml` e.g. `.github/workflows/cicd-workflow.yml`
+3. Create a workflow file inside `.github/workflows`, filename can be anything but extension must be `.yml` e.g. `.github/workflows/cicd-workflow.yml`
 #### Workflow file example
 >```
 ># workflow name
@@ -58,7 +58,7 @@ For example,
 - `push` event will be triggered when someone push some codes into the repository
 - `pull_request` event will be triggered when someone open a pull request
 
-After pushed changes, go to `Actions` tab in your Github repository.  The changes will be verifying.  You should see the green check in front of the workflow name after finish.
+After pushing your changes, go to `Actions` tab in your Github repository. The changes will be verified and you should see the green check in front of the workflow name when it is finished.
 
 ## Verifying changes before merging codes
 1. Go to `.github/workflows/cicd-workflow.yml`, edit the file by clicking at pencil icon
@@ -78,14 +78,14 @@ After pushed changes, go to `Actions` tab in your Github repository.  The change
 5. Go to `Pull requests`, you will see the check named `Nodejs (pull_request)` is running 
 
 ## Setting branch protection
-To protect a branch from failure commits by requiring status checks before merging a pull request
+Protect the master branch from having commits not tested merged by requiring status checks to pass before merging a pull request
 1. Select `Settings` of your github repository
 2. Go to `Branches` in the left menu and click on `Add rule` button
   - Branch name pattern: master
   - Check on `Require status checks to pass before merging`
   - Select `Nodejs` workflow
 3. Go back to `Pull requests`, you will see `Required` badge inside the check
-4. Wait for all checks have passed and click on `Merge pull request` button
+4. Wait for all checks to pass and click on `Merge pull request` button
 
 ## Deploying to heroku
 ### How to create app
@@ -96,11 +96,14 @@ To protect a branch from failure commits by requiring status checks before mergi
 5. Fill `App Name` e.g. `<your_name>-cicd`
 
 ### How to connect GitHub and Heroku together
+In Heroku:
 1. Click on your avatar on the top-right corner
 2. Select `Account settings`
 3. Scroll down to `API Key` and `Generate API Key...`
 4. Copy `API Key`
-5. Go back to your github project repository
+
+In your github project repository:
+
 6. Select `Settings` of your github repository
 7. Go to `Secrets` and `Add a new secret`
     - Name: HEROKU_API_KEY
@@ -108,7 +111,7 @@ To protect a branch from failure commits by requiring status checks before mergi
 
 ### Heroku integration
 1. Go back to `Code` tab and go inside `.github/workflows` directory
-2. Select `Create new file` and file name can be any in `yml` e.g. `.github/workflows/master-cicd.yml`
+2. Select `Create new file`, filename can be anything but extension must be `.yml` e.g. `.github/workflows/master-cicd.yml`
 ```
 name: Nodejs
 on: 
