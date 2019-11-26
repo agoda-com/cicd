@@ -3,6 +3,7 @@
 # Workflows CICD Workshop
 
 ## Table of Contents
+- [How to fork the repository](#how-to-fork-the-repository)
 - [Creating a workflow file](#creating-a-workflow-file)
 - [Triggering a workflow](#triggering-a-workflow)
 - [Verifying changes before merging codes](#verifying-changes-before-merging-codes)
