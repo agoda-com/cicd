@@ -43,7 +43,7 @@
 >      # checkout codes to a build server
 >      - uses: actions/checkout@v1
 >
->      # build dcoker image
+>      # build docker image
 >      - name: Docker build
 >        run: docker build -t $IMAGE_NAME:$IMAGE_TAG .
 >
@@ -188,7 +188,7 @@ jobs:
 6. Click `Commit changes` button and `Create pull request`
 7. Wait for `pull_request` workflow to be triggered and run test
 
-## How could we fix when some test failed?
+## How could we fix when some tests failed?
 1. Go back to `Code` tab
 2. Select `update-greeting` branch
 3. Go to `tests` directory and select `erver.test.js` file
