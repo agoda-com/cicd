@@ -1,4 +1,4 @@
-![](https://github.com/agoda-com/cicd/workflows/Nodejs/badge.svg)
+![](https://github.com/AlphaNiner1415/cicd/workflows/Nodejs/badge.svg)
 
 # Workflows CICD Workshop
 
