@@ -1,0 +1,41 @@
+name: Nodejs
+on:
+  push:
+    # the job will be triggered when there are changes in master
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Nodejs
+    runs-on: ubuntu-latest
+    # environment variables for Heroku
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      HEROKU_APP: new-cicd
+    steps:
+      - uses: actions/checkout@v1
+
+      # login to Heroku with Heroku API key
+      - name: Heroku login
+        uses: "actions/heroku@master"
+        with:
+          args: "container:login"
+          secrets: |
+            $HEROKU_API_KEY
+
+      # push codes to Heroku
+      - name: Heroku push
+        uses: "actions/heroku@master"
+        with:
+          args: "container:push -a $HEROKU_APP web"
+          secrets: |
+            $HEROKU_API_KEY
+
+      # release
+      - name: Heroku release
+        uses: "actions/heroku@master"
+        with:
+          args: "container:release -a $HEROKU_APP web"
+          secrets: |
+            $HEROKU_API_KEY
