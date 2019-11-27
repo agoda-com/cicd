@@ -1,0 +1,25 @@
+# workflow name
+name: Nodejs
+# event of the workflow
+on: push
+
+jobs:
+ build:
+   name: Nodejs
+   # specify a host machine for the job e.g. ubuntu-latest, windows-latest
+   runs-on: ubuntu-latest
+   # define environment variables using in the job
+   env:
+     IMAGE_NAME: nodejs-example
+     IMAGE_TAG: latest
+   steps:
+     # checkout codes to a build server
+     - uses: actions/checkout@v1
+
+     # build docker image
+     - name: Docker build
+       run: docker build -t $IMAGE_NAME:$IMAGE_TAG .
+
+     # run tests
+     - name: Test
+       run: docker run --rm -i $IMAGE_NAME:$IMAGE_TAG yarn test
